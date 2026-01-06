@@ -1,3 +1,5 @@
+*.zip
+
 # PyCharm
 .idea/
 
@@ -61,7 +63,7 @@ Plugins/Houdini*
 SourceArt/**/*.tga
 SourceArt/**/backup/*
 SourceArt/**/backup
-SourceArt/*
+SourceArt/Human/*
 # !SourceArt/Human/
 # !SourceArt/Human/Export/
 # !SourceArt/Human/Export/*
