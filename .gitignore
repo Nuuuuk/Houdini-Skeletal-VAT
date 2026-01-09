@@ -100,3 +100,9 @@ DerivedDataCache/*
 Config/
 Source/
 *.uproject
+
+# External Actors (Unreal Engine 5 Partitioned World Actor Data)
+Content/__ExternalActors__/
+
+# Temporary SourceArt files
+SourceArt/_temp/
