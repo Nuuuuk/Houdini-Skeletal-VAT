@@ -95,3 +95,8 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Unreal project files
+Config/
+Source/
+*.uproject
