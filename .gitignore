@@ -96,13 +96,6 @@ Plugins/*/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-# Unreal project files
-Config/
-Source/
-*.uproject
-
-# External Actors (Unreal Engine 5 Partitioned World Actor Data)
-Content/__ExternalActors__/
 
 # Temporary SourceArt files
 SourceArt/_temp/
