@@ -1,12 +1,18 @@
 # Houdini Skeletal VAT (Vertex Animation Textures)
 
-This repository implements the Custom Skeleton Mode VAT pipeline. Unlike traditional vertex-based methods, this approach bakes bone matrices and calculates skinning at runtime to dramatically reduce the required texture size, while enabling shared animations across characters with identical skeletons.
+![BoneVAT Infograph](docs/BoneVAT_infograph_lowres.jpg)
 
-> **Read the full post:** [3 Custom VAT Skeleton Modes: Efficient GPU Skinning](https://www.leiwu.co/posts/skeleton-vat-pipeline)
+Skeletal VAT pipeline for Houdini & Unreal. Unlike softbody mode VAT, which flatten skeletal animation to purely vertex-based deformation animation, this skeletal mode bakes bone matrices and calculates skinning at runtime in vertex shader to dramatically reduce the required texture size, while enabling shared animations across characters with identical skeletons.
+
+![BoneVAT Chart](docs/BoneVAT_chart.svg)
+
+> 🔗 **Read the full post:** [**3 Custom VAT Skeleton Modes: Efficient GPU Skinning**](https://www.leiwu.co/posts/skeleton-vat-pipeline)
 
 ---
 
 *For any settings or import procedures not specified below, please follow the standard SideFX Labs VAT Soft-Body Deformation mode.*
+
+*Note: Currently, only a maximum of 128 bones are supported, and vertex weights will be automatically re-normalized to a maximum of 4 influences per vertex.*
 
 ---
 
@@ -62,3 +68,5 @@ For simplicity, click the **Reset to Default** button at the top right of the **
 * **Nanite On**:
   * 1. Check **Enable Nanite Support** in the Static Mesh settings, and (**Crucial**) uncheck **Lerp UVs**, then click **Apply Changes**.
   * 2. If characters explode or behave abnormally in certain areas when far from the camera, check **Renormalize Weights** and uncheck **Enable Bone 3** in the UE Material Instance (Currently, if Nanite is enabled, only 3 influences are supported, since the 4th index is stored in vertex alpha, which is mandatorily lerped by Nanite).
+
+*Note: Disabling Nanite (Off) is currently recommended for better stability.*
